@@ -36,6 +36,7 @@ class _PlayListScreenState extends State<PlayListScreen> {
         backgroundColor: Colors.black87,
       ),
         body: ListView.builder(
+          physics: ClampingScrollPhysics(),
             itemCount: litems.length,
             itemBuilder: (BuildContext ctxt, int index) {
               return Container(

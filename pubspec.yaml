@@ -52,6 +52,14 @@ flutter:
     - assets/images/q.png
     - assets/images/dooWahDooLogo.png
     - assets/images/polygon.png
+    - assets/images/home.png
+    - assets/images/search.png
+    - assets/images/mic.png
+    - assets/images/user.png
+    - assets/images/selectedUser.png
+    - assets/images/selectedMic.png
+    - assets/images/selectedHome.png
+    - assets/images/selectedQ.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

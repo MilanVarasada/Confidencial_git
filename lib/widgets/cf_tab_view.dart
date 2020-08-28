@@ -5,6 +5,8 @@ class CFTabView extends StatefulWidget {
   final String secondOptionTitle;
   final Function firstOptionAction;
   final Function secondOptionAction;
+  final String thirdOptionTitle;
+  final Function thirdOptionAction;
   final bool isHome;
   CFTabView({
     @required this.firstOptionTitle,
@@ -12,7 +14,10 @@ class CFTabView extends StatefulWidget {
     @required this.firstOptionAction,
     @required this.secondOptionAction,
     @required this.isHome,
+    this.thirdOptionTitle,
+    this.thirdOptionAction
   });
+
   @override
   _CFTabViewState createState() => _CFTabViewState();
 }
@@ -20,6 +25,8 @@ class CFTabView extends StatefulWidget {
 class _CFTabViewState extends State<CFTabView> {
   Alignment _alignment = Alignment.topLeft;
   bool _firstOptionSelected = true;
+  bool _secondOptionSelected = false;
+  bool _thirdOptionSelected = false;
 
   @override
   void initState() {
@@ -58,21 +65,39 @@ class _CFTabViewState extends State<CFTabView> {
                       setState(() {
                         _alignment = Alignment.topLeft;
                         _firstOptionSelected = true;
+                        _secondOptionSelected = false;
+                        _thirdOptionSelected = false;
                         widget.firstOptionAction();
                       });
                     },
                     isSelected: _firstOptionSelected),
+                
+                widget.thirdOptionTitle == null || widget.thirdOptionTitle == "" ? Container() :
                 _getTabViewOptions(
-                  option: widget.secondOptionTitle,
+                  option: widget.thirdOptionTitle,
                   onTap: () {
                     setState(() {
-                      _alignment = Alignment.topRight;
+                      _alignment = Alignment.topCenter;
                       _firstOptionSelected = false;
-                      widget.secondOptionAction();
+                      _secondOptionSelected = false;
+                      _thirdOptionSelected = true;
+                      widget.thirdOptionAction();
                     });
                   },
-                  isSelected: !_firstOptionSelected,
+                  isSelected: _thirdOptionSelected,
                 ),
+                _getTabViewOptions(
+                    option: widget.secondOptionTitle,
+                    onTap: () {
+                      setState(() {
+                        _alignment = Alignment.topRight;
+                        _firstOptionSelected = false;
+                      _secondOptionSelected = true;
+                      _thirdOptionSelected = false;
+                        widget.secondOptionAction();
+                      });
+                    },
+                    isSelected: _secondOptionSelected),
               ],
             ),
           ],
@@ -86,7 +111,7 @@ class _CFTabViewState extends State<CFTabView> {
         duration: Duration(milliseconds: 200),
         alignment: _alignment,
         child: Container(
-          width: (MediaQuery.of(context).size.width * 0.9) / 2,
+          width: (MediaQuery.of(context).size.width * 0.9) /   (widget.thirdOptionTitle == null || widget.thirdOptionTitle == "" ? 2 : 3) ,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(
               Radius.circular(40.0),

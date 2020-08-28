@@ -1,3 +1,6 @@
+
+import './ui/user_profile_screen.dart';
+
 import './ui/auth/enter_code.dart';
 import './ui/tab_screen.dart';
 
@@ -25,7 +28,8 @@ class MyApp extends StatelessWidget {
            PlayListScreen.routeName: (ctx) => PlayListScreen(),
             TabScreen.routeName : (ctx) => TabScreen(),
             EnterCode.routeName : (ctx) => EnterCode(),
-        },
+            UserProfileScreen.routeName : (ctx) => UserProfileScreen(),
+         },
       
     );
   }
