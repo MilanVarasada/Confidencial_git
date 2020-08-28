@@ -65,17 +65,14 @@ class SignupScreen extends StatelessWidget {
                       padding: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.05),
                       child: Container(
-                        width: double.infinity,
-                        child: Center(
-                          child: Text(
-                            'LOGO',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 80,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
+                      alignment: Alignment.centerLeft,
+                      width: 250,
+                      height: 200,
+                      child: Image.asset(
+                        'assets/images/dooWahDooLogo.png',
+                        fit: BoxFit.contain,
                       ),
+                    ),
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(

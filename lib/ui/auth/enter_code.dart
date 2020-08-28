@@ -20,17 +20,15 @@ class _EnterCodeState extends State<EnterCode> {
                 BoxDecoration(gradient: cfGradientLayer(isVertical: true)),
             child: Column(
               children: [
-                Container(
-                  alignment: AlignmentDirectional.bottomCenter,
-                  height: MediaQuery.of(context).size.height * 0.28,
-                  child: Text(
-                    'LOGO',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 80,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
+                 Container(
+                      alignment: Alignment.centerLeft,
+                      width: 250,
+                      height: 200,
+                      child: Image.asset(
+                        'assets/images/dooWahDooLogo.png',
+                        fit: BoxFit.contain,
+                      ),
+                    ),
                 Container(
                   margin: EdgeInsets.only(top: 30),
                   child: CircleAvatar(

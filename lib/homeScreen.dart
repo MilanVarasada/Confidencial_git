@@ -33,17 +33,14 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Container(
-              width: double.infinity,
-              child: Center(
-                child: Text(
-                  'LOGO',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 80,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
+                      alignment: Alignment.centerLeft,
+                      width: 250,
+                      height: 200,
+                      child: Image.asset(
+                        'assets/images/dooWahDooLogo.png',
+                        fit: BoxFit.contain,
+                      ),
+                    ),
           ),
           Expanded(
             flex: 1,

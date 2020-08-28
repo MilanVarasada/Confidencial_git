@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 class SignInScreen extends StatelessWidget {
   static const routeName = '/signIn';
   _clickedOnSignInButton(BuildContext context) {
-     Navigator.of(context).pushNamed(EnterCode.routeName);
+    Navigator.of(context).pushNamed(EnterCode.routeName);
   }
 
   void _clickedOnForgotPassword() {
@@ -33,61 +33,60 @@ class SignInScreen extends StatelessWidget {
             width: double.infinity,
           ),
           SingleChildScrollView(
-                  child: Container(
+            child: Container(
               height: MediaQuery.of(context).size.height,
               width: double.infinity,
               child: Column(
                 children: <Widget>[
                   Expanded(
-                  flex: 1,
-                  child: Container(
-                    width: double.infinity,
-                    child: Center(
-                      child: Text(
-                        'LOGO',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 80,
-                            fontWeight: FontWeight.bold),
+                    flex: 1,
+                    child: Container(
+                      alignment: Alignment.centerLeft,
+                      width: 250,
+                      height: 200,
+                      child: Image.asset(
+                        'assets/images/dooWahDooLogo.png',
+                        fit: BoxFit.contain,
                       ),
                     ),
                   ),
-                ),
                   Expanded(
                     flex: 1,
-                      child: Column(
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
-                            child: Column(
-                              children: <Widget>[
-                                CFTextField(
-                                  hint: 'Email',
-                                ),
-                                CFTextField(
-                                  hint: 'Password',
-                                ),
-                              ],
-                            ),
+                    child: Column(
+                      children: <Widget>[
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal:
+                                  MediaQuery.of(context).size.width * 0.1),
+                          child: Column(
+                            children: <Widget>[
+                              CFTextField(
+                                hint: 'Email',
+                              ),
+                              CFTextField(
+                                hint: 'Password',
+                              ),
+                            ],
                           ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 60.0),
-                            child: CFButton(
-                              btnAction: () {
-                                _clickedOnSignInButton(context);
-                              },
-                              btnTitle: 'Sign In',
-                            ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 60.0),
+                          child: CFButton(
+                            btnAction: () {
+                              _clickedOnSignInButton(context);
+                            },
+                            btnTitle: 'Sign In',
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 15.0),
-                            child: CFForgotPasswordBtn(
-                              btnAction: _clickedOnForgotPassword,
-                              btnTitle: 'Forgot Password?',
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 15.0),
+                          child: CFForgotPasswordBtn(
+                            btnAction: _clickedOnForgotPassword,
+                            btnTitle: 'Forgot Password?',
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ],
               ),
